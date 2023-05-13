@@ -1,4 +1,4 @@
-package ru.grndev.cthulhuserver.Models;
+package ru.grndev.cthulhuserver.models;
 
 public class DeadDetective extends Detective{
 }
