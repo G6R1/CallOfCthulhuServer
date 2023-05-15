@@ -24,9 +24,6 @@
 	<modules>
 		<module>CthulhuServer</module>
 		<module>CthulhuServerGateway</module>
-<!--		<module>CthulhuLibrary</module>-->
+		<module>CthulhuLibrary</module>
 	</modules>
 </project>
-
-
-<!--добавить в детектива сопротивляемость к существам по рассудку-->

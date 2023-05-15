@@ -9,19 +9,18 @@
 	</parent>
 
 	<groupId>ru.grndev</groupId>
-	<artifactId>CthulhuServerGateway</artifactId>
+	<artifactId>CthulhuLibrary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CthulhuServerGateway</name>
-	<description>Data validation before processing</description>
+	<name>CthulhuLibrary</name>
 
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
@@ -29,18 +28,10 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>ru.grndev</groupId>
-			<artifactId>CthulhuLibrary</artifactId>
-			<version>${project.parent.version}</version>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
