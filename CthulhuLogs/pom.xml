@@ -9,10 +9,10 @@
 	</parent>
 
 	<groupId>ru.grndev</groupId>
-	<artifactId>CthulhuServerGateway</artifactId>
+	<artifactId>CthulhuLogs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CthulhuServerGateway</name>
-	<description>Data validation before processing</description>
+	<name>CthulhuLogs</name>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>
