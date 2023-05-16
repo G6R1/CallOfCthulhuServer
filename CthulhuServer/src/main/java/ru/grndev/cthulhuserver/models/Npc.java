@@ -3,6 +3,8 @@ package ru.grndev.cthulhuserver.models;
 import java.util.Map;
 
 public class Npc {
+    private Integer id;
+
     private int str;
     private int con;
     private int siz;
