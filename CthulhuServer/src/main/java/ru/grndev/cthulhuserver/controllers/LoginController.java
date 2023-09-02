@@ -5,18 +5,16 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.grndev.cthulhuserver.models.users.User;
-
-import java.util.List;
 
 @Slf4j
 @Validated
 @RestController
-public class PublicController {
+@RequestMapping("/login")
+public class LoginController {
 
     @GetMapping()
-    public String getStart() {
-        return "Привет! Ктулху зовет из (паблик-контроллер)";
+    public String getStartPage() {
+        return "Привет! /login";
 
     }
 

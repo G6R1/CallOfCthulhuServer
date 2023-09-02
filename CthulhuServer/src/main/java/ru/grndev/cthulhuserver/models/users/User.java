@@ -1,4 +1,4 @@
-package ru.grndev.cthulhusecurity.models;
+package ru.grndev.cthulhuserver.models.users;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,11 +13,12 @@ import java.util.Collection;
 @ToString
 @Builder
 public class User implements UserDetails {
-    private Integer id;
+    private Long id;
     private String nickname;
     private String password;
     private String email;
     private String description;
+    private String roleId;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { //возвращает список ролей пользователя

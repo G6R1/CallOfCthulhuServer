@@ -1,4 +1,4 @@
-package ru.grndev.cthulhusecurity.models;
+package ru.grndev.cthulhuserver.models.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,22 +12,16 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Role implements GrantedAuthority {
+public class Role /*implements GrantedAuthority*/ {
     private Long id;
     private String name;
-    private Set<User> users;
 
     public Role(Long id) {
         this.id = id;
     }
 
-    public Role(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    @Override
-    public String getAuthority() {
-        return getName();
-    }
+//    @Override
+//    public String getAuthority() {
+//        return getName();
+//    }
 }

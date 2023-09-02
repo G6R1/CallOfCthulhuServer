@@ -1,4 +1,4 @@
-package ru.grndev.cthulhuserver.models;
+package ru.grndev.cthulhuserver.models.game;
 
 import java.util.Map;
 
