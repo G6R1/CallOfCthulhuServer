@@ -25,7 +25,6 @@
 		<module>CthulhuServer</module>
 		<module>CthulhuServerGateway</module>
 		<module>CthulhuLibrary</module>
-		<module>CthulhuSecurity</module>
 		<module>CthulhuLogs</module>
 	</modules>
 </project>

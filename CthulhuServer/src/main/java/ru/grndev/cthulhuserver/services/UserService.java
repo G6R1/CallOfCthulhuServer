@@ -10,7 +10,7 @@ public class UserService implements UserDetailsService { //UserDetailsService д
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        return null;
+        return null; //извлечение пользователя из бд
     }
 
 

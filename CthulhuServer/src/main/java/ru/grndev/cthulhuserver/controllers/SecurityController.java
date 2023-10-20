@@ -9,29 +9,25 @@ import ru.grndev.cthulhuserver.models.users.User;
 import java.util.Arrays;
 import java.util.List;
 
-@Slf4j
-@Validated
 @RestController
 @RequestMapping("/auth/users")
 public class SecurityController {
 
     @GetMapping()
     public List<User> getUsers() {
-        return List.of(new User(0L, "testUs", "password", "test@ty.com", "desc"));
+        return List.of();
 
     }
 
     @GetMapping("/id")
     public List<User> getUsers(Long id) {
-        return null;
-
+        return List.of();
     }
 
     @PostMapping()
-    @PreAuthorize("users:write")
+    //@PreAuthorize("users:write")
     public String createUser() { //UserDTO
         return "Я метод пост-юзер";
-
     }
 
     @DeleteMapping()

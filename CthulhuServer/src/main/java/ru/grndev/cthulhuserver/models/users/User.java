@@ -4,21 +4,29 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.*;
 import java.util.Collection;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
 @Builder
+@Entity
+@Table(name = "users")
 public class User implements UserDetails {
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private long id;
+    @Column(unique = true)
     private String nickname;
     private String password;
+    @Column(unique = true)
     private String email;
     private String description;
-    private String roleId;
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private long roleId;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { //возвращает список ролей пользователя
