@@ -14,10 +14,10 @@ import java.util.List;
 @RestController
 public class PublicController {
 
-    @GetMapping()
-    public String getStart() {
-        return "Привет! Ктулху зовет из (паблик-контроллер)";
-
-    }
+//    @GetMapping()
+//    public String getStart() {
+//        return "Привет! Ктулху зовет из (паблик-контроллер)";
+//
+//    }
 
 }

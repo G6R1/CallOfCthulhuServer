@@ -1,27 +1,38 @@
 package ru.grndev.cthulhuserver.models.users;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-public class Role /*implements GrantedAuthority*/ {
+@Data
+@Entity
+@Table(name = "roles")
+public class Role implements GrantedAuthority {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
     private Long id;
+    @Column(name = "role_name")
     private String name;
+    @Transient
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
     public Role(Long id) {
         this.id = id;
     }
 
-//    @Override
-//    public String getAuthority() {
-//        return getName();
-//    }
+    public Role(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public String getAuthority() {
+        return name.toString();
+    }
 }

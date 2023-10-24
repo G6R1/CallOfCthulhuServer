@@ -1,27 +1,39 @@
 package ru.grndev.cthulhuserver.controllers;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.grndev.cthulhuserver.models.users.User;
+import ru.grndev.cthulhuserver.services.UserService;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
 @RequestMapping("/auth/users")
 public class SecurityController {
 
-    @GetMapping()
-    public List<User> getUsers() {
-        return List.of();
+    private final UserService userService;
 
+    @Autowired
+    public SecurityController(UserService userService) {
+        this.userService = userService;
     }
 
+
+
+
+
+
+
+
+
+    @GetMapping()
+    public List<User> getUsers() {
+        return null;
+
+    }
     @GetMapping("/id")
-    public List<User> getUsers(Long id) {
-        return List.of();
+    public User getUserById(Long id) {
+        return null;
     }
 
     @PostMapping()
