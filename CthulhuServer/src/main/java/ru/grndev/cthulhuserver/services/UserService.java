@@ -15,7 +15,7 @@ import ru.grndev.cthulhuserver.repositories.UserRepository;
 import java.util.Collections;
 
 @Component
-public class UserService implements UserDetailsService { //UserDetailsService для конфига был нужен
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder bCryptPasswordEncoder;
@@ -30,15 +30,16 @@ public class UserService implements UserDetailsService { //UserDetailsService д
     public UserDetails loadUserByUsername(String login) {
         User user = userRepository.findByLogin(login);
         if (user == null) {
-            throw new UsernameNotFoundException("Unknown user: "+ login);
+            throw new UsernameNotFoundException("Unknown user: " + login);
         }
         return user; //извлечение пользователя из бд
     }
 
     public boolean saveUser(User user) {
-        User userFromDB = userRepository.findByLogin(user.getUsername());
+        User loginCheck = userRepository.findByLogin(user.getUsername());
+        User emailCheck = userRepository.findByEmail(user.getEmail());
 
-        if (userFromDB != null) {
+        if (loginCheck != null || emailCheck != null) {
             return false;
         }
 
@@ -50,15 +51,15 @@ public class UserService implements UserDetailsService { //UserDetailsService д
         return true;
     }
 
-    public User createCreator() {
-        User user = new User(null,
-                "grn",
-                bCryptPasswordEncoder.encode("flvbybuhsvfu109"),
-                "gerian109@yandex.ru",
-                "creator",
-                Collections.singleton(new Role(1L, RolesValue.ROLE_ADMIN.toString())));
-        return userRepository.save(user);
-    }
+//    public User createCreator() {
+//        User user = new User(null,
+//                "grn",
+//                bCryptPasswordEncoder.encode("flvbybuhsvfu109"),
+//                "gerian109@yandex.ru",
+//                "creator",
+//                Collections.singleton(new Role(1L, RolesValue.ROLE_ADMIN.toString())));
+//        return userRepository.save(user);
+//    }
 
 
 //    @Override
